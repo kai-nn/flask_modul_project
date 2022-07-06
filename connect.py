@@ -5,8 +5,8 @@ from app import app
 
 # Подключение к БД
 SQLALCHEMY_DATABASE_URI = "mysql+pymysql://{username}:{password}@{hostname}/{databasename}".format(
-    username="kainn",
-    password="hydramysql",
+    username="",
+    password="",
     hostname="localhost",
     databasename="microERP",
 )
@@ -17,7 +17,7 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 
 # секретный ключ сесcии
-# app.config['SECRET_KEY'] = os.urandom(20).hex() # если так сделать, то теряется сессия!!!
+# app.config['SECRET_KEY'] = os.urandom(20).hex()
 app.config['SECRET_KEY'] = "1234567890"
 
 # настройка загружаемых изображений

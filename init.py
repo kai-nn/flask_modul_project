@@ -147,8 +147,8 @@ except Exception as ex:
                  last_name='Корпусов',
                 otchestvo='Иванович',
 
-                 login='kai.nn',
-                 psw='123',
+                 login='',
+                 psw='',
 
                  email='kai.nn@mail.ru',
                  phone='9601698300',
