@@ -1,0 +1,49 @@
+$weight: 480px;
+
+// шторка
+.curtain{
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+
+  z-index: 500;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3px);
+}
+
+.window{
+  width: $weight;
+  height: 500px;
+
+  border-radius: 3px;
+
+  background: white;
+  //background: rgba(244, 254, 255, 0.7);
+  //opacity: 0.8;
+
+  backdrop-filter: blur(4px);
+
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+  z-index: 1000;
+
+  position: fixed;
+  top: 100px;
+  right: 50%;
+  transform: translate($weight/2, 0);
+
+  animation-duration: .5s;
+  animation-name: show;
+}
+
+@keyframes show {
+  from {
+    right: -$weight/2;
+  }
+  to {
+    right: 50%;
+    transform: translate($weight/2, 0);
+  }
+}

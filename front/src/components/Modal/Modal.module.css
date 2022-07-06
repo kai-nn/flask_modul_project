@@ -1,0 +1,36 @@
+.curtain {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  height: 440px;
+  width: 440px;
+  z-index: 500;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.4));
+}
+
+.open {
+  animation-duration: 0.5s;
+  animation-name: open;
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=Modal.module.css.map */

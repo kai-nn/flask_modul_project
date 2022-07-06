@@ -1,0 +1,38 @@
+.curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 500;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3px);
+}
+
+.window {
+  width: 480px;
+  height: 500px;
+  border-radius: 3px;
+  background: white;
+  backdrop-filter: blur(4px);
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+  z-index: 1000;
+  position: fixed;
+  top: 100px;
+  right: 50%;
+  transform: translate(240px, 0);
+  animation-duration: 0.5s;
+  animation-name: show;
+}
+
+@keyframes show {
+  from {
+    right: -240px;
+  }
+  to {
+    right: 50%;
+    transform: translate(240px, 0);
+  }
+}
+
+/*# sourceMappingURL=AddTech.module.css.map */
