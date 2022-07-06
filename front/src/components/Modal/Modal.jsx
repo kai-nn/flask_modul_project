@@ -15,15 +15,11 @@ const Modal = ({setActive, header, children, footer}) => {
 
     return (
         <div className={toggle} onClick={closeModal}>
-            {/*<div className="modal__content" onClick={(e) => e.stopPropagation()}>*/}
-            {/*<div className="curtain" onClick={closeModal}></div>*/}
             <div className="modal" onClick={(e) => e.stopPropagation()}>
                 <div className="modal__header">{header}</div>
                 <div className="modal__body">{children}</div>
                 <div className="modal__footer">{footer}</div>
             </div>
-
-            {/*</div>*/}
         </div>
     )
 }

@@ -52,6 +52,7 @@
 .modal .modal__body {
   height: inherit;
   width: inherit;
+  padding: 5px;
   z-index: 1000;
   overflow-y: auto;
 }

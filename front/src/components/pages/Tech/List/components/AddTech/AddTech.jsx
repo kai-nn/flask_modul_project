@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Modal from "../../../../../Modal/Modal";
 import Button from "@mui/material/Button";
 import {Add} from "@mui/icons-material";
@@ -12,10 +12,15 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import Accordion from "@mui/material/Accordion";
 import TextField from "@mui/material/TextField";
+import { styled } from '@mui/material/styles';
 
 const AddTech = ({addTech, setAddTech}) => {
 
-    let handleChange;
+  const [expanded, setExpanded] = useState(true);
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false)
+  };
+
 
     return (
         <Modal
@@ -36,66 +41,114 @@ const AddTech = ({addTech, setAddTech}) => {
                 }
             >
 
-            <Accordion>
-                <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                    >
-                    <Typography>Название</Typography>
+            <Accordion
+                expanded={expanded}
+                onChange={handleChange('panel1')}
+                >
+                <AccordionSummary expandIcon={<ExpandMoreIcon />} >
+                    Основные характеристики
                 </AccordionSummary>
                 <AccordionDetails>
-                    <TextField
-                      id="outlined-multiline-flexible"
-                      label="Деталь"
-                      size="small"
-                      multiline
-                      maxRows={4}
-                      // value={value}
-                      // onChange={handleChange}
-                    />
-                    <TextField
-                      id="outlined-multiline-flexible"
-                      label="Название"
-                      size="small"
-                      multiline
-                      maxRows={4}
-                      // value={value}
-                      // onChange={handleChange}
-                    />
-
+                    <div style={{display: "grid", gridTemplateColumns: "auto auto", gap: "10px"}}>
+                        <TextField
+                          label="Деталь"
+                          size="small"
+                          multiline
+                          // value={value}
+                          // onChange={handleChange}
+                        />
+                        <TextField
+                          label="Название"
+                          size="small"
+                          multiline
+                          // value={value}
+                          // onChange={handleChange}
+                        />
+                        <TextField
+                          label="Обозначение технологии"
+                          size="small"
+                          multiline
+                          // value={value}
+                          // onChange={handleChange}
+                        />
+                        <TextField
+                          label="Индекс"
+                          size="small"
+                          multiline
+                          // value={value}
+                          // onChange={handleChange}
+                        />
+                    </div>
                 </AccordionDetails>
             </Accordion>
 
             <Accordion>
-                <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                    >
-                    <Typography>Подписи</Typography>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />} >
+                    Атрибуты документа
                 </AccordionSummary>
                 <AccordionDetails>
-                    <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                    </Typography>
+                    <div style={{display: "grid", gridTemplateColumns: "80% auto",  gap: "10px"}}>
+                        <TextField
+                          label="Название комлекта"
+                          size="small"
+                          multiline
+                          // value={value}
+                          // onChange={handleChange}
+                        />
+                        <TextField
+                          label="Литера"
+                          size="small"
+                          multiline
+                          // value={value}
+                          // onChange={handleChange}
+                        />
+                    </div>
                 </AccordionDetails>
             </Accordion>
 
             <Accordion>
-                <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                    >
-                    <Typography>Заготовка</Typography>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />} >
+                    Заготовка
                 </AccordionSummary>
                 <AccordionDetails>
-                    <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                    malesuada lacus ex, sit amet blandit leo lobortis eget.
-                    </Typography>
+                    <TextField
+                      label="Сортамент"
+                      size="small"
+                      multiline
+                      style={{width: "100%", margin: "0 0 10px 0"}}
+                      // value={value}
+                      // onChange={handleChange}
+                    />
+                    <div style={{display: "grid", gridTemplateColumns: "auto auto", gap: "10px"}}>
+                        <TextField
+                          label="Код"
+                          size="small"
+                          multiline
+                          // value={value}
+                          // onChange={handleChange}
+                        />
+                        <TextField
+                          label="ЕВ"
+                          size="small"
+                          multiline
+                          // value={value}
+                          // onChange={handleChange}
+                        />
+                                                <TextField
+                          label="МД"
+                          size="small"
+                          multiline
+                          // value={value}
+                          // onChange={handleChange}
+                        />
+                        <TextField
+                          label="ЕН"
+                          size="small"
+                          multiline
+                          // value={value}
+                          // onChange={handleChange}
+                        />
+                    </div>
                 </AccordionDetails>
             </Accordion>
 
